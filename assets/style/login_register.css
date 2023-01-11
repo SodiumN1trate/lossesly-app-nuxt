@@ -1,0 +1,204 @@
+@font-face {
+  font-family: Roboto-regular;
+  src: url(@/assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto-medium;
+  src: url(@/assets/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: Roboto-light;
+  src: url(@/assets/fonts/Roboto-Light.ttf);
+}
+
+html, body {
+  margin: 0;
+}
+
+* {
+  box-sizing: unset !important;
+}
+
+body {
+  max-width: 1980px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Roboto-regular;
+  font-size: 14px;
+}
+
+span {
+  color: #5F5C5A;
+  font-family: Roboto-light;
+}
+
+h1 {
+  color: #E2571C;
+}
+
+a, a:link {
+  color: #E2571C;
+  font-family: Roboto-light;
+}
+
+.login-container {
+  display: flex;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 0;
+  border-radius: 20px;
+}
+
+.content {
+  padding: 40px;
+  padding-right: 54px;
+  min-width: 400px;
+  width: 100%;
+  border: 3px solid #E2571C;
+  border-right: none;
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.content > div {
+  padding-left: 32px;
+  padding-right: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+input, button {
+  border: 1px solid #E2571C;
+  border-radius: 62px;
+  padding: 0;
+  color: #2A2523;
+  outline: none;
+  font-family: Roboto-regular;
+  background-color: white;
+}
+
+label {
+  font-size: 14px;
+  line-height: 19px;
+  color: #E2571C;
+  font-family: Roboto-medium;
+}
+
+input {
+  width:  calc(100% - 32px);
+  padding: 16px;
+}
+
+button {
+  display: block;
+  color: #E2571C;
+  padding: 16px;
+  font-family: Roboto-medium;
+}
+
+/* Customize the label (the container) */
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 19px;
+  padding-left: 25px;
+  font-size: 14px;
+  color: rgba(42, 37, 35, 0.75);
+  font-family: Roboto-light;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.remember-me-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background: #FFFFFF;
+  border: 1px solid #E2571C;
+  border-radius: 4px;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.remember-me-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.remember-me-container .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid #E2571C;
+  border-width: 0 1px 1px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.banner {
+  background-color: #E2571C;
+  width: 100%;
+  min-width: 450px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 0;
+  position: relative;
+}
+
+.banner > .top-right {
+  position: absolute;
+  width: 250px;
+  right: 0px;
+  top: 0;
+}
+
+.banner > .bottom-left {
+  position: absolute;
+  width: 250px;
+  left: 0;
+  bottom: 3px;
+}
+
+::placeholder {
+  color: #C2C1C1;
+  font-family: Roboto-light;
+}

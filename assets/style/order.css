@@ -1,0 +1,48 @@
+
+.order-container {
+  box-sizing: border-box;
+  background: linear-gradient(white, white) padding-box,
+  linear-gradient(to bottom, #F06023, #FFA524) border-box;
+  border: 4px solid transparent;
+  display: flex;
+  gap: 32px;
+  padding: 32px;
+  align-items: stretch;
+  flex-direction: column;
+  border-radius: 29px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.order-user-profile {
+  display: flex;
+  gap: 10px;
+}
+
+.order-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.order-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.order-images > img {
+  max-width: 280px;
+  transition: .3s all;
+  border: 1px solid #E2571C;
+  cursor: pointer;
+}
+
+.order-images > img:hover {
+  transform: scale(1.1);
+  border: 2px solid #E2571C;
+
+}
