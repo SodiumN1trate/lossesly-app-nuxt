@@ -1,0 +1,79 @@
+.filter-container {
+  margin-top: 100px;
+  display: flex;
+}
+
+.filter-container > label > input {
+  border-radius: 0;
+
+}
+.filter-container > label > div > div {
+  border-radius: 0;
+  border-top-left-radius: 62px;
+  border-bottom-left-radius: 62px;
+  padding-bottom: 13px;
+  width: 210px;
+  border-right: none;
+
+}
+
+.filter-container > label > input[name=rating], .filter-container > label > input[name=price] {
+  width: 130px;
+  border-right: none;
+}
+
+.filter-container > label > input[name=location] {
+  width: 180px;
+  border-right: none;
+}
+
+.result-container {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.filter-specialist-card {
+  position: relative;
+  transition: .3s all;
+  cursor: pointer;
+}
+
+.filter-specialist-card:hover {
+  transform: scale(1.1);
+}
+
+.filter-specialist-card-content {
+  width: 600px;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border: 1px solid #E66833;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 29px;
+}
+
+
+.filter-specialist-card-data {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.filter-specialist-card-data > .user-rating {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.filter-specialist-card-data-price {
+  position: absolute;
+  padding: 15px 20px 15px 20px;
+  right: 0;
+  background-color: #E2571C;
+  color: white;
+  border-top-right-radius: 29px;
+  border-bottom-left-radius: 29px;
+  font-family: Roboto-medium;
+}

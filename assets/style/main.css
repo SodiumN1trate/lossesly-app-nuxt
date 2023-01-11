@@ -1,0 +1,182 @@
+html, body {
+  margin: 0;
+  font-family: Roboto-regular;
+}
+
+body {
+  max-width: 1980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 38px;
+  font-family: Roboto-thin;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 23px;
+}
+
+h6 {
+  font-size: 18px;
+  font-family: Roboto-medium;
+}
+
+p {
+  font-size: 14px;
+}
+
+.primary {
+  color: #E2571C;
+}
+
+.black {
+  color: #2A2523;
+}
+
+.black-75 {
+  color: #5F5C5A;
+}
+
+.black-50 {
+  color: #BAB9B9;
+}
+
+.black-25 {
+  color: #EAEAE9;
+}
+
+.black-5 {
+  color: #F4F4F4;
+}
+
+.white {
+  color: white;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+span {
+  color: #5F5C5A;
+  font-family: Roboto-light;
+}
+
+a, a:link {
+  color: #E2571C;
+  font-family: Roboto-light;
+}
+
+main {
+  max-width: 1980px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  margin-top: 60px;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specialist-banner {
+  background-color: #E66833;
+  z-index: -3;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-rating {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-edit {
+  display: flex;
+  gap: 50px;
+}
+
+.short {
+  align-self: flex-start;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination > img {
+  cursor: pointer;
+}
+
+.pagination-button {
+  text-align: center;
+  transition: 0.4s all;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5F5C5A;
+}
+
+.pagination-button:hover {
+  background-color: #FF9264;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-right: 5px;
+  transform: scale(1.1);
+  color: white;
+}
+
+.filter-specialist-card-image, .order-user-profile-image, .review-user-image {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #D9D9D9;
+  border-radius: 23px;
+  object-fit: contain;
+}
+
+.reverse {
+  flex-direction: row-reverse !important;
+}
+
+.reverse > .chat-user-message {
+  border-radius: 30px 0px 30px 30px;
+  background-color: #E2571C;
+  color: white;
+  margin-right: 20px;
+}
+
