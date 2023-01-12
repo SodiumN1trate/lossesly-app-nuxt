@@ -4,12 +4,12 @@
     <div>
       <h1>Ieiet</h1>
       <br>
-      <form>
+      <form @submit.prevent>
         <label for="email">E-pasts
-          <input id="email" type="text" placeholder="Ierakstiet e-pastu">
+          <input id="email" type="text" placeholder="Ierakstiet e-pastu" v-model="form.email">
         </label>
         <label for="password">Parole
-          <input id="password" type="text" placeholder="Ierakstiet paroli">
+          <input id="password" type="password" placeholder="Ierakstiet paroli" v-model="form.password">
         </label>
         <div>
           <label class="remember-me-container">Atcerēties mani
@@ -18,8 +18,8 @@
           </label>
           <a href="#">Aizmirsi paroli?</a>
         </div>
-        <button>Ienākt</button>
-        <span>Neesi reģistrējies? <a href="#">Izveidot profilu</a></span>
+        <button @click="submit">Ienākt</button>
+        <span>Neesi reģistrējies? <a href="/register">Izveidot profilu</a></span>
       </form>
     </div>
   </div>
@@ -29,8 +29,25 @@
 export default {
   name: 'Profile',
   layout: 'AuthLayout',
-  async created () {
-    // await this.$axios.$get('asd')
+  data () {
+    return {
+      form: {
+        email: null,
+        password: null
+      }
+    }
+  },
+  methods: {
+    async submit () {
+      await this.$axios.post('/login', this.form).then((respones) => {
+        alert('You\'ve loged in!')
+      }).catch((e) => {
+        for (const [key, value] of Object.entries(e.response.data.errors)) {
+          alert(value[0])
+          console.log(key)
+        }
+      })
+    }
   }
 }
 </script>
