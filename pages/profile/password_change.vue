@@ -18,6 +18,7 @@
 <script>
 export default {
   name: 'Profile',
-  layout: 'ProfileLayout'
+  layout: 'ProfileLayout',
+  auth: true
 }
 </script>

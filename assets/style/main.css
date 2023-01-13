@@ -72,6 +72,14 @@ p {
   color: white;
 }
 
+.danger-text {
+  color: #F20200;
+}
+
+.success-text {
+  color: #22b615;
+}
+
 .bold {
   font-weight: 600;
 }
@@ -81,10 +89,12 @@ span {
   font-family: Roboto-light;
 }
 
-a, a:link {
+a, a:link, a:visited {
   color: #E2571C;
   font-family: Roboto-light;
 }
+
+
 
 main {
   max-width: 1980px;

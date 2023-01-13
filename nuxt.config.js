@@ -18,16 +18,17 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~/assets/style/main.css',
-    // '~/assets/style/chat.css',
-    // '~/assets/style/dots.css',
-    // '~/assets/style/filter.css',
-    // '~/assets/style/font.css',
-    // '~/assets/style/form.css',
-    // '~/assets/style/navigation_footer.css',
-    // '~/assets/style/order.css',
-    // '~/assets/style/profile.css',
-    // '~/assets/style/table.css'
+    '~/assets/style/main.css',
+    '~/assets/style/chat.css',
+    '~/assets/style/dots.css',
+    '~/assets/style/filter.css',
+    '~/assets/style/font.css',
+    '~/assets/style/form.css',
+    '~/assets/style/navigation_footer.css',
+    '~/assets/style/order.css',
+    '~/assets/style/profile.css',
+    '~/assets/style/table.css',
+    '~/assets/style/login_register.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -106,9 +107,9 @@ export default {
           autoFetch: true
         },
         endpoints: {
-          login: { url: process.env.API_ADDRESS + '/login', method: 'GET' },
+          login: { url: process.env.API_ADDRESS + '/login', method: 'POST' },
           logout: { url: process.env.API_ADDRESS + '/logout', method: 'GET' },
-          user: { url: process.env.API_ADDRESS + '/me', method: 'GET', propertyName: false }
+          user: { url: process.env.API_ADDRESS + '/user', method: 'GET', propertyName: false }
         }
       }
     }

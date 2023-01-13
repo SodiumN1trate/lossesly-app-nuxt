@@ -40,26 +40,21 @@ button {
   font-family: Roboto-medium;
 }
 
-.dropdown-container {
-  width: 100%;
-}
 
 .dropdown-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.dropdown-input > span {
-  font-size: 14px;
-  color: #C2C1C1;
-  font-family: Roboto-light;
-  cursor: pointer;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
 }
 
 ::placeholder {
   color: #C2C1C1;
   font-family: Roboto-light;
+}
+
+.attachments {
+  display: flex;
+  flex-direction: column;
 }
 
 textarea {
