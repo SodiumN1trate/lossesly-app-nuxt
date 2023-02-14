@@ -40,9 +40,13 @@ export default {
         avatar: this.$auth.user.avatar
       },
       imagePreview: this.$auth.user.avatar,
+      oldImage: null,
       errors: [],
       success: null
     }
+  },
+  mounted () {
+    this.oldImage = this.form.avatar
   },
   methods: {
     async edit () {
@@ -54,7 +58,10 @@ export default {
         }
       }
       const data = new FormData()
-      for (const [key, value] of Object.entries(this.form)) { data.append(key, value) }
+      for (const [key, value] of Object.entries(this.form)) {
+        if (key === 'avatar' && value === this.oldImage) { continue }
+        data.append(key, value)
+      }
       await this.$axios.post(`/users/${this.$auth.user.id}?_method=PUT`, data, config).then((response) => {
         this.success = 'Veiksmīgi rediģēti dati'
       }).catch((e) => {

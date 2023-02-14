@@ -46,6 +46,7 @@ export default {
           this.errors.push(error[1][0])
         }
       })
+      await this.$auth.fetchUser()
     }
   }
 }
