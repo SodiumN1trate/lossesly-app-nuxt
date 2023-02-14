@@ -40,7 +40,7 @@ export default {
       this.errors = []
       this.success = null
       await this.$axios.post('/change_password', this.form).then((response) => {
-        this.success = 'Veiksmīgi mainīti dati'
+        this.success = 'Parole nomainīta'
       }).catch((e) => {
         for (const error of Object.entries(e.response.data.errors)) {
           this.errors.push(error[1][0])
