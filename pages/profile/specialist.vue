@@ -32,6 +32,10 @@
         </div>
       </div>
       <button class="short">Nosūtīt</button>
+      <h6 class="success-text">{{success}}</h6>
+      <ul v-if="errors.length > 0">
+        <li v-for="(error, index) in errors" :key="index" class="danger-text">{{ error }}</li>
+      </ul>
     </form>
   </div>
 </template>
@@ -81,9 +85,17 @@ export default {
         }
       }
       const data = new FormData()
-      for (const [key, value] of Object.entries(this.form)) { data.append(key, value) }
+      for (const [key, value] of Object.entries(this.form)) {
+        if (key === 'attachments') {
+          value.forEach((file, index) => {
+            data.append(`attachments[${index}]`, file)
+          })
+        } else {
+          data.append(key, value === 0 || value === null ? '' : value)
+        }
+      }
       await this.$axios.post('/specialist_application', data, config).then((response) => {
-        this.success = 'Veiksmīgi rediģēti dati'
+        this.success = 'Pieprasījums nosūtīts'
       }).catch((e) => {
         for (const error of Object.entries(e.response.data.errors)) {
           this.errors.push(error[1][0])
