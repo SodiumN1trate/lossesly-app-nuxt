@@ -7,12 +7,20 @@
       </div>
 
       <div class="social-media">
+        <NuxtLink to="/filter">Atrast speciālistu</NuxtLink>
         <img src="@/assets/vectors/twitter.svg" width="20px">
         <img src="@/assets/vectors/facebook.svg" width="20px">
         <img src="@/assets/vectors/instagram.svg" width="20px">
       </div>
     </div>
     <div class="profile-banner">
+      <h2>{{ title }}</h2>
     </div>
   </header>
 </template>
+
+<script>
+export default {
+  props: ['title']
+}
+</script>

@@ -4,54 +4,29 @@
       <tr>
         <th>Status</th>
         <th>Specialitāts</th>
-        <th>Datums</th>
+        <th>Sākuma datums</th>
+        <th>Beigu datums</th>
         <th>Cena</th>
       </tr>
-      <tr>
+      <tr v-for="(row, index) in data" :key="index">
         <td><div class="dot-green"></div></td>
-        <td>Maria Anders</td>
-        <td>12.12.2022</td>
-        <td>500€</td>
-      </tr>
-      <tr>
-        <td><div class="dot-green"></div></td>
-        <td>Maria Anders</td>
-        <td>12.12.2022</td>
-        <td>500€</td>
-      </tr>
-      <tr>
-        <td><div class="dot-green"></div></td>
-        <td>Maria Anders</td>
-        <td>12.12.2022</td>
-        <td>500€</td>
-      </tr>
-      <tr>
-        <td><div class="dot-green"></div></td>
-        <td>Maria Anders</td>
-        <td>12.12.2022</td>
-        <td>500€</td>
-      </tr>
-      <tr>
-        <td><div class="dot-green"></div></td>
-        <td>Maria Anders</td>
-        <td>12.12.2022</td>
-        <td>500€</td>
-      </tr>
-      <tr>
-        <td><div class="dot-green"></div></td>
-        <td>Maria Anders</td>
-        <td>12.12.2022</td>
-        <td>500€</td>
+        <td>{{ row.expert.name }} {{ row.expert.surname }}</td>
+        <td>{{ row.started }}</td>
+        <td>{{ row.end }}</td>
+        <td>{{ row.price }}€</td>
       </tr>
     </table>
     <div class="pagination">
-      <i class="pagination-button bi bi-caret-left"></i>
-      <p class="pagination-button">1</p>
-      <p class="pagination-button">1</p>
-      <p class="pagination-button">1</p>
-      <p class="pagination-button">1</p>
-      <p class="pagination-button">1</p>
-      <i class="pagination-button bi bi-caret-right"></i>
+<!--      <i class="pagination-button bi bi-caret-left"></i>-->
+      <div v-for="(link, index) in links" :key="index">
+        <p
+          class="pagination-button"
+          :class="{'pagination-button-active': link.active }"
+          v-if="!['pagination.previous', 'pagination.next'].includes(link.label)"
+          @click="nextPage(link.label)"
+        >{{ link.label }}</p>
+      </div>
+<!--      <i class="pagination-button bi bi-caret-right"></i>-->
     </div>
   </div>
 </template>
@@ -60,6 +35,26 @@
 export default {
   name: 'Profile',
   layout: 'ProfileLayout',
-  auth: true
+  auth: true,
+  data () {
+    return {
+      data: [],
+      links: []
+    }
+  },
+  mounted () {
+    this.$axios.get('/user_jobs').then((response) => {
+      this.data = response.data.data
+      this.links = response.data.meta.links
+    })
+  },
+  methods: {
+    nextPage (page) {
+      this.$axios.get('/user_jobs?page=' + page).then((response) => {
+        this.data = response.data.data
+        this.links = response.data.meta.links
+      })
+    }
+  }
 }
 </script>

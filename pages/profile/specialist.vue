@@ -2,8 +2,6 @@
   <div class="profile-edit">
     <form @submit.prevent="submit">
       <label>Specialitāte
-<!--          <div class="dropdown-input"><span>Izvēlēties specialitāti</span> <img src="@/assets/vectors/arrow_down.svg" width="18px" height="18px"></div>-->
-
           <select v-model="form.speciality_id" class="dropdown-input">
             <option value="0" disabled selected>Izvēlaties specialitāti:</option>
             <option :value="speciality.id" v-for="speciality in specialities" :key="speciality.id">{{ speciality.name }}</option>

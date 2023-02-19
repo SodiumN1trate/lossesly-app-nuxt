@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="profile">
     <PageNavigation />
     <main>
       <div class="profile-container">
@@ -8,7 +8,7 @@
           <NuxtLink to="/profile/edit" class="black-75">Datu labošana</NuxtLink>
           <NuxtLink to="/profile/specialist" class="black-75">Kļūt par speciālistu</NuxtLink>
           <NuxtLink to="/profile/password_change" class="black-75">Proles maiņa</NuxtLink>
-<!--          <NuxtLink to="/profile/transactions" class="black-75">Darijumi</NuxtLink>-->
+          <NuxtLink to="/profile/transactions" class="black-75">Darijumi</NuxtLink>
           <a @click="logout" class="black-75">Iziet</a>
         </div>
         <div class="profile-content">

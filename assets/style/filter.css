@@ -14,7 +14,30 @@
   padding-bottom: 13px;
   width: 210px;
   border-right: none;
+}
 
+.filter-container > label > select {
+  border-radius: 0;
+  border-top-left-radius: 62px;
+  border-bottom-left-radius: 62px;
+  padding-bottom: 13px;
+  height: 22px;
+  border-right: none;
+}
+
+.filter-button {
+  background-color: #E2571C;
+  border-top-right-radius: 62px;
+  border-bottom-right-radius: 62px;
+  color: white;
+  height: 53px;
+  width: 100px;
+  margin-top: 10px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .filter-container > label > input[name=rating], .filter-container > label > input[name=price] {

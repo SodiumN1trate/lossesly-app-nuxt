@@ -101,20 +101,6 @@ textarea {
   color: white !important;
 }
 
-.filter-button {
-  background-color: #E2571C;
-  border-top-right-radius: 62px;
-  border-bottom-right-radius: 62px;
-  color: white;
-  height: 50px;
-  width: 100px;
-  align-self: flex-end;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
 .success {
   border: 1px solid green;
   padding-left: 32px;
