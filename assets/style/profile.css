@@ -22,10 +22,10 @@
   display: flex;
   gap: 32px;
   max-width: 1000px;
-
+  width: 100%;
 }
 
-.profile-navigation {
+.profile-navigation > div {
   background: linear-gradient(white, white) padding-box,
   linear-gradient(to right, #F06023, #FFA524) border-box;
   border-right: 3px solid transparent;
@@ -37,7 +37,7 @@
   align-items: flex-start;
 }
 
-.profile-navigation > a {
+.profile-navigation > div > a {
   font-size: 23px;
   font-family: Roboto-medium;
   transition: .6s all;
@@ -45,7 +45,11 @@
   color: #5F5C5A;
 }
 
-.profile-navigation > a:hover {
+.profile-navigation > div > a:link {
+  text-decoration: none;
+}
+
+.profile-navigation > div > a:hover {
   background: -webkit-linear-gradient(right, #F06023, #FFA524);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

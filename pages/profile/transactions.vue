@@ -1,6 +1,6 @@
 <template>
   <div class="profile-transactions">
-    <table>
+    <table v-if="data.length > 0">
       <tr>
         <th>Status</th>
         <th>Specialitāts</th>
@@ -16,7 +16,11 @@
         <td>{{ row.price }}€</td>
       </tr>
     </table>
-    <div class="pagination">
+    <div class="text-center" v-else>
+      Nav vēl neviena darijuma :( <br>
+      <NuxtLink to="/filter">Atrast speciālistu</NuxtLink>
+    </div>
+    <div class="pagination" v-if="links.length > 3">
 <!--      <i class="pagination-button bi bi-caret-left"></i>-->
       <div v-for="(link, index) in links" :key="index">
         <p

@@ -53,12 +53,13 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
-    // 'bootstrap-vue/nuxt',
-    // 'bootstrap-vue/nuxt', {
-    //   icons: true
-    // }
+    '@nuxtjs/auth-next',
+    'bootstrap-vue/nuxt',
   ],
+
+  bootstrapVue: {
+    icons: true
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {

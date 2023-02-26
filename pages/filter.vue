@@ -23,7 +23,7 @@
 
       <div class="result-container">
         <h5 v-if="specialists.length === 0">Netika atrasti speciālisti :(</h5>
-        <div class="filter-specialist-card" v-for="(specialist, index) in specialists" :key="index">
+        <div class="filter-specialist-card" v-for="(specialist, index) in specialists" :key="index" @click="$router.push('/user/' + specialist.id)">
           <span class="filter-specialist-card-data-price bold">{{ specialist.specialities[0].pivot.price_per_hour }}€/h</span>
           <div class="filter-specialist-card-content">
             <img :src="specialist.avatar" class="filter-specialist-card-image">
@@ -32,7 +32,7 @@
                 <h5>{{ specialist.name }} {{ specialist.surname }}</h5>
                 <div class="user-rating">
                   <p class="black">{{ specialist.rating }}</p>
-                  <img src="src/vectors/star.svg" width="16px" height="16px">
+                  <img src="@/assets/vectors/star.svg" width="16px" height="16px">
                 </div>
               </div>
               <p><span v-for="(speciality, index) in specialist.specialities" :key="index">{{ index === specialist.specialities.length - 1 ? speciality.name : speciality.name + ', ' }}</span></p>
