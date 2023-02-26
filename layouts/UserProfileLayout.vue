@@ -14,7 +14,7 @@
 <!--          <NuxtLink to="/profile/password_change" class="black-75">Proles maiņa</NuxtLink>-->
 <!--          <NuxtLink to="/profile/transactions" class="black-75">Darijumi</NuxtLink>-->
 <!--          <a @click="logout" class="black-75">Iziet</a>-->
-          <button>Pieteikties</button>
+          <NuxtLink :to="`/order/${this.$route.params.id}/form`"><button>Pieteikt</button></NuxtLink>
         </div>
         <div class="profile-content">
           <Nuxt />
