@@ -2,7 +2,8 @@
   <div class="profile">
     <PageNavigation />
     <main>
-      <div class="profile-container w-auto">
+      <div class="profile-container w-auto d-flex flex-column">
+        <h4>Pasūtīt speciālistu</h4>
         <div class="profile-content">
           <UserData :user="user" />
           <form @submit.prevent="submit" class="d-flex flex-column w-100 mt-4 gap-4">

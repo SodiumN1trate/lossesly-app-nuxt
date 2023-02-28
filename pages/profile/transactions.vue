@@ -8,7 +8,7 @@
         <th>Beigu datums</th>
         <th>Cena</th>
       </tr>
-      <tr v-for="(row, index) in data" :key="index">
+      <tr v-for="(row, index) in data" :key="index" @click="$router.push('/order/' + row.id)">
         <td><div class="dot-green"></div></td>
         <td>{{ row.expert.name }} {{ row.expert.surname }}</td>
         <td>{{ row.started }}</td>

@@ -16,14 +16,7 @@
             </div>
           </div>
         </div>
-        <div class="d-flex justify-content-between" style="gap: 10px">
-          <div>
-            <NuxtLink v-if="!is_expert" :to="`/bill/${user_job.id}`"><button class="btn btn-primary" type="button">Samaksāt</button></NuxtLink>
-            <NuxtLink v-else :to="`/bill/${user_job.id}`"><button class="btn btn-primary" type="button">Izrakstīt rēķinu</button></NuxtLink>
-            <NuxtLink to="/profile/transactions"><button class="btn btn-secondary" type="button">Atpakaļ</button></NuxtLink>
-          </div>
-          <NuxtLink :to="`/order/cancellation/${user_job.id}`"><button class="btn btn-danger" type="button">Atcelt pasūtījumu</button></NuxtLink>
-        </div>
+        <NuxtLink to="/profile"><button class="btn btn-secondary" type="button">Atpakaļ</button></NuxtLink>
       </div>
     </main>
   </div>
@@ -33,14 +26,12 @@
 export default {
   data () {
     return {
-      user_job: null,
-      is_expert: false
+      user_job: null
     }
   },
   mounted () {
     this.$axios.get('/user_jobs/' + this.$route.params.id).then((response) => {
       this.user_job = response.data.data
-      this.is_expert = this.user_job.expert.id === this.$auth.user.id
     })
   }
 }
