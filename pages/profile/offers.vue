@@ -3,14 +3,14 @@
     <table v-if="data.length > 0">
       <tr>
         <th>Status</th>
-        <th>Specialitāts</th>
+        <th>Pasūtītājs</th>
         <th>Sākuma datums</th>
         <th>Beigu datums</th>
         <th>Cena</th>
       </tr>
       <tr v-for="(row, index) in data" :key="index" @click="$router.push('/order/' + row.id)">
         <td style="width: 100px"><div class="dot-green" :style="{ backgroundColor: row.status.color }"><p>{{ row.status.name }}</p></div></td>
-        <td>{{ row.expert.name }} {{ row.expert.surname }}</td>
+        <td>{{ row.user_id.name }} {{ row.user_id.surname }}</td>
         <td>{{ row.started }}</td>
         <td>{{ row.end }}</td>
         <td>{{ row.price }}€</td>
@@ -21,7 +21,7 @@
       <NuxtLink to="/filter">Atrast speciālistu</NuxtLink>
     </div>
     <div class="pagination" v-if="links.length > 3">
-<!--      <i class="pagination-button bi bi-caret-left"></i>-->
+      <!--      <i class="pagination-button bi bi-caret-left"></i>-->
       <div v-for="(link, index) in links" :key="index">
         <p
           class="pagination-button"
@@ -30,7 +30,7 @@
           @click="nextPage(link.label)"
         >{{ link.label }}</p>
       </div>
-<!--      <i class="pagination-button bi bi-caret-right"></i>-->
+      <!--      <i class="pagination-button bi bi-caret-right"></i>-->
     </div>
   </div>
 </template>
@@ -47,7 +47,7 @@ export default {
     }
   },
   mounted () {
-    this.$axios.get('/user_jobs').then((response) => {
+    this.$axios.get('/offers').then((response) => {
       this.data = response.data.data
       this.links = response.data.meta.links
     })

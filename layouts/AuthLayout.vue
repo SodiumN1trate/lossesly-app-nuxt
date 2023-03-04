@@ -21,8 +21,3 @@
     </div>
   </div>
 </template>
-
-<style>
-@import '@/assets/style/login_register.css';
-
-</style>

@@ -2,9 +2,12 @@
   <div class="content">
     <img src="@/assets/images/logo.png" width="49px" height="60px">
     <div>
-      <h1>Ieiet</h1>
+      <h4 class="primary">Ieiet</h4>
       <br>
-      <form @submit.prevent>
+      <ul v-if="errors.length > 0">
+        <li v-for="(error, index) in errors" :key="index" class="danger-text">{{ error }}</li>
+      </ul>
+      <form @submit.prevent="login" class="auth-form">
         <label for="email">E-pasts
           <input id="email" type="text" placeholder="Ierakstiet e-pastu" v-model="form.email">
         </label>
@@ -18,7 +21,7 @@
           </label>
           <a href="#">Aizmirsi paroli?</a>
         </div>
-        <button @click="submit">Ienākt</button>
+        <button>Ienākt</button>
         <span>Neesi reģistrējies? <a href="/register">Izveidot profilu</a></span>
       </form>
     </div>
@@ -34,17 +37,21 @@ export default {
       form: {
         email: null,
         password: null
-      }
+      },
+      errors: []
     }
   },
   methods: {
-    async submit () {
-      await this.$axios.post('/login', this.form).then((respones) => {
-        alert('You\'ve loged in!')
+    async login () {
+      await this.$auth.loginWith('local', { data: this.form }).then((data) => {
+        this.$auth.strategy.token.set(data.data.access_token)
+        this.$auth.strategy.token.sync()
+        this.$auth.setUser(data.data.user)
+        this.$router.push('/profile')
       }).catch((e) => {
-        for (const [key, value] of Object.entries(e.response.data.errors)) {
-          alert(value[0])
-          console.log(key)
+        this.errors = []
+        for (const error of Object.entries(e.response.data.errors)) {
+          this.errors.push(error[1][0])
         }
       })
     }

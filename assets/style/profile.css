@@ -4,9 +4,12 @@
   position: absolute;
   right: 0;
   left: 0;
-  height: 30vh;
+  height: 15vh;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .profile-container {
   padding: 64px;
@@ -19,9 +22,10 @@
   display: flex;
   gap: 32px;
   max-width: 1000px;
+  width: 100%;
 }
 
-.profile-navigation {
+.profile-navigation > div {
   background: linear-gradient(white, white) padding-box,
   linear-gradient(to right, #F06023, #FFA524) border-box;
   border-right: 3px solid transparent;
@@ -33,14 +37,19 @@
   align-items: flex-start;
 }
 
-.profile-navigation > a {
+.profile-navigation > div > a {
   font-size: 23px;
   font-family: Roboto-medium;
   transition: .6s all;
   cursor: pointer;
+  color: #5F5C5A;
 }
 
-.profile-navigation > a:hover {
+.profile-navigation > div > a:link {
+  text-decoration: none;
+}
+
+.profile-navigation > div > a:hover {
   background: -webkit-linear-gradient(right, #F06023, #FFA524);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -72,6 +81,7 @@ a.nuxt-link-exact-active {
   border-radius: 28px;
   cursor: pointer;
   user-select: none;
+  object-fit: cover;
 }
 
 .profile-user-data {
@@ -118,14 +128,14 @@ a.nuxt-link-exact-active {
 
 .profile-user-image-icon {
   position: absolute;
-  right: 10px;
-  top: 180px;
+  right: 5px;
+  top: 90px;
   transition: .3s all;
   cursor: pointer;
 }
 
 .profile-user-image-icon:hover {
-  transform: scale(1.4);
+  transform: scale(1.1);
 }
 
 .profile-password-settings {

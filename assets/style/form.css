@@ -40,26 +40,21 @@ button {
   font-family: Roboto-medium;
 }
 
-.dropdown-container {
-  width: 100%;
-}
 
 .dropdown-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.dropdown-input > span {
-  font-size: 14px;
-  color: #C2C1C1;
-  font-family: Roboto-light;
-  cursor: pointer;
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: space-between;*/
 }
 
 ::placeholder {
   color: #C2C1C1;
   font-family: Roboto-light;
+}
+
+.attachments {
+  display: flex;
+  flex-direction: column;
 }
 
 textarea {
@@ -104,20 +99,6 @@ textarea {
   border-bottom-right-radius: 58px;
   padding: 16px;
   color: white !important;
-}
-
-.filter-button {
-  background-color: #E2571C;
-  border-top-right-radius: 62px;
-  border-bottom-right-radius: 62px;
-  color: white;
-  height: 50px;
-  width: 100px;
-  align-self: flex-end;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
 }
 
 .success {
