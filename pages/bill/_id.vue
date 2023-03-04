@@ -53,7 +53,7 @@ export default {
       await this.$axios.put('/set_bill/' + this.$route.params.id, this.form).then((response) => {
         this.success = 'Rēķins nosūtīts'
         setTimeout(() => {
-          this.$router.push('/profile')
+          this.$router.push('/profile/offers')
         }, 2000)
       }).catch((e) => {
         for (const error of Object.entries(e.response.data.errors)) {

@@ -22,7 +22,7 @@
             <NuxtLink v-else :to="`/bill/${user_job.id}`"><button class="btn btn-primary" type="button">Izrakstīt rēķinu</button></NuxtLink>
             <NuxtLink to="/profile/transactions"><button class="btn btn-secondary" type="button">Atpakaļ</button></NuxtLink>
           </div>
-          <NuxtLink :to="`/order/cancellation/${user_job.id}`"><button class="btn btn-danger" type="button">Atcelt pasūtījumu</button></NuxtLink>
+          <NuxtLink :to="`/order/${user_job.id}/cancellation`"><button class="btn btn-danger" type="button">Atcelt darbu</button></NuxtLink>
         </div>
       </div>
     </main>

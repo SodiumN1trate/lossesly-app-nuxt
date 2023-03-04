@@ -27,7 +27,7 @@
           </label>
         </div>
         <button>Reģistrēties</button>
-        <span>Esi reģistrējies? <a href="/register">Ieiet profilā</a></span>
+        <span>Esi reģistrējies? <a href="/login">Ieiet profilā</a></span>
       </form>
     </div>
   </div>
