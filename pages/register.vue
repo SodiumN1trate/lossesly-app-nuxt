@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <img src="@/assets/images/logo.png" width="49px" height="60px">
+    <NuxtLink to="/"><img src="@/assets/images/logo.png" width="49px" height="60px"></NuxtLink>
     <div>
       <h4 class="primary">Reģistrēties</h4>
       <br>

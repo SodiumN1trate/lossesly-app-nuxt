@@ -24,9 +24,9 @@
       </div>
 
       <div class="social-media">
-        <img src="src/vectors/twitter.svg" width="20px">
-        <img src="src/vectors/facebook.svg" width="20px">
-        <img src="src/vectors/instagram.svg" width="20px">
+        <img src="@/assets/vectors/twitter.svg" width="20px">
+        <img src="@/assets/vectors/facebook.svg" width="20px">
+        <img src="@/assets/vectors/instagram.svg" width="20px">
       </div>
     </div>
     <p id="copyrigth">© 2023 Lossesly. Visas tiesības aizsargātas.</p>

@@ -41,6 +41,11 @@ export default {
       success: null
     }
   },
+  created () {
+    if (!this.$auth?.user) {
+      this.$router.push('/login')
+    }
+  },
   mounted () {
     this.$axios.get('/user_jobs/' + this.$route.params.id).then((response) => {
       this.user_job = response.data.data

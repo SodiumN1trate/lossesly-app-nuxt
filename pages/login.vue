@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <img src="@/assets/images/logo.png" width="49px" height="60px">
+    <NuxtLink to="/"><img src="@/assets/images/logo.png" width="49px" height="60px"></NuxtLink>
     <div>
       <h4 class="primary">Ieiet</h4>
       <br>
@@ -19,7 +19,7 @@
             <input type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <a href="#">Aizmirsi paroli?</a>
+          <a href="/forgot_password">Aizmirsi paroli?</a>
         </div>
         <button>Ienākt</button>
         <span>Neesi reģistrējies? <a href="/register">Izveidot profilu</a></span>

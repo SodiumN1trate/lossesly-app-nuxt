@@ -1,7 +1,7 @@
 <template>
   <div class="profile-user" v-if="user && comments">
     <div class="profile-content">
-      <div class="reviews">
+      <div class="reviews"  v-if="comments.length > 0">
         <div class="review" v-for="(comment, index) in comments" :key="index">
           <div>
             <img :src="comment.user.avatar" class="review-user-image">
@@ -30,6 +30,9 @@
           </div>
           <!--      <i class="pagination-button bi bi-caret-right"></i>-->
         </div>
+      </div>
+      <div v-else>
+        Nav nevienas atsauksmes
       </div>
     </div>
   </div>

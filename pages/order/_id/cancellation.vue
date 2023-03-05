@@ -53,6 +53,12 @@ export default {
       success: null
     }
   },
+  auth: true,
+  created () {
+    if (!this.$auth?.user) {
+      this.$router.push('/login')
+    }
+  },
   mounted () {
     this.$axios.get('/user_jobs/' + this.$route.params.id).then((response) => {
       this.user_job = response.data.data
@@ -91,6 +97,9 @@ export default {
       }
       await this.$axios.post('/job_cancels', data, config).then((response) => {
         this.success = 'Pieprasījums nosūtīts'
+        setTimeout(() => {
+          this.$router.push('/profile/transactions')
+        }, 2000)
       }).catch((e) => {
         for (const error of Object.entries(e.response.data.errors)) {
           this.errors.push(error[1][0])
