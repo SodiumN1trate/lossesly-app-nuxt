@@ -13,7 +13,7 @@
         <td>{{ row.user_id.name }} {{ row.user_id.surname }}</td>
         <td>{{ row.started }}</td>
         <td>{{ row.end }}</td>
-        <td>{{ row.price }}€</td>
+        <td>{{ row.price ? row.price + '€' : '' }}</td>
       </tr>
     </table>
     <div class="text-center" v-else>

@@ -58,6 +58,12 @@ export default {
       success: null
     }
   },
+  auth: true,
+  created () {
+    if (!this.$auth?.user) {
+      this.$router.push('/login')
+    }
+  },
   mounted () {
     this.$axios.get('/users/' + this.$route.params.id).then((response) => {
       this.user = response.data.data

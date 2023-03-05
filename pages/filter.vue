@@ -48,6 +48,7 @@
 
 <script>
 export default {
+  auth: true,
   data () {
     return {
       specialities: [],
@@ -62,6 +63,9 @@ export default {
     }
   },
   async mounted () {
+    if (!this.$auth?.user) {
+      this.$router.push('/login')
+    }
     await this.$axios.get('/specialities').then((response) => {
       this.specialities = response.data.data
     })

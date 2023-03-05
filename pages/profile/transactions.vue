@@ -3,7 +3,7 @@
     <table v-if="data.length > 0">
       <tr>
         <th>Status</th>
-        <th>Specialitāts</th>
+        <th>Specialitāte</th>
         <th>Sākuma datums</th>
         <th>Beigu datums</th>
         <th>Cena</th>
@@ -13,7 +13,7 @@
         <td>{{ row.expert.name }} {{ row.expert.surname }}</td>
         <td>{{ row.started }}</td>
         <td>{{ row.end }}</td>
-        <td>{{ row.price }}€</td>
+        <td>{{ row.price ? row.price + '€' : '' }}</td>
       </tr>
     </table>
     <div class="text-center" v-else>

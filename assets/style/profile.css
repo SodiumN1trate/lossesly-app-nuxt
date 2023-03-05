@@ -56,7 +56,7 @@
   padding-left: 50px;
 }
 
-a.nuxt-link-exact-active {
+.profile-navigation > div > a.nuxt-link-exact-active {
   background: -webkit-linear-gradient(right, #F06023, #FFA524);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

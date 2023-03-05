@@ -7,8 +7,11 @@
           <span class="logo-text">Lossesly</span>
         </div>
 
-        <div class="social-media">
+        <div class="social-media" v-if="$auth.user">
           <NuxtLink to="/filter">Atrast speciālistu</NuxtLink>
+          <NuxtLink to="/profile"><img src="@/assets/vectors/profile.svg" width="40px"></NuxtLink>
+        </div>
+        <div class="social-media" v-else>
           <img src="@/assets/vectors/twitter.svg" width="20px">
           <img src="@/assets/vectors/facebook.svg" width="20px">
           <img src="@/assets/vectors/instagram.svg" width="20px">
@@ -24,12 +27,8 @@
           </div>
           <p class="black-75">Mēs Jums palīdzēsim atrast piemērotu speciālistu!</p>
           <div class="d-flex mt-5" style="gap: 20px;">
-            <div class="button">
-              Ieiet
-            </div>
-            <div class="button">
-              Reģistrēties
-            </div>
+            <NuxtLink to="/login"><div class="button">Ieiet</div></NuxtLink>
+            <NuxtLink to="/register"><div class="button">Reģistrēties</div></NuxtLink>
           </div>
           <div class="arrow-box">
             <img src="@/assets/vectors/arrow.svg">
@@ -51,10 +50,6 @@
           <p>Pasūtītājs ar speciālistu paši var vienoties par pakalpojuma sniegšanas laiku.</p>
         </div>
       </div>
-      <div class="banner-4 d-flex flex-column justify-content-center align-items-center" style="gap: 50px">
-        <h2>Populārākie speciālisti</h2>
-        <UserCarousel :users="users" v-if="users" />
-      </div>
       <div class="banner-3" ref="banner3">
         <div>
           <h2>{{ numbers[0] }}</h2>
@@ -68,6 +63,10 @@
           <h2>{{ numbers[2] }}</h2>
           <p>Portāla<br>apmeklējums 24h</p>
         </div>
+      </div>
+      <div class="banner-4 d-flex flex-column justify-content-center align-items-center" style="gap: 50px">
+        <h2>Populārākie speciālisti</h2>
+        <UserCarousel :users="users" v-if="users" />
       </div>
 <!--      <div class="banner-4 d-flex flex-column justify-content-center align-items-center" style="gap: 50px">-->
 <!--        <h2>Populārākie speciālisti</h2>-->
@@ -120,6 +119,10 @@ export default {
 </script>
 
 <style>
+a:link {
+  text-decoration: none;
+}
+
 .main-banner {
   display: flex;
   width: 100%;
@@ -164,14 +167,14 @@ export default {
 }
 
 .banner-4 {
-  margin-top: 400px;
+  margin-bottom: 200px;
 }
 
 .banner-2, .banner-3 {
   margin-top: 400px;
   background-image: url("../assets/images/banner2.png");
   width: 100%;
-  height: 450px;
+  height: 460px;
   background-repeat: no-repeat;
   color: white;
   display: flex;
