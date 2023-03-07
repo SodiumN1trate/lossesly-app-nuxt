@@ -33,6 +33,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: '~/plugins/permissions.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -84,6 +85,10 @@ export default {
     axios: {
       baseURL: process.env.API_ADDRESS
     }
+  },
+
+  env: {
+    API_ADDRESS: process.env.API_ADDRESS
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

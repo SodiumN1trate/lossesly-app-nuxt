@@ -9,8 +9,9 @@
         <th>Cena</th>
       </tr>
       <tr v-for="(row, index) in data" :key="index" @click="$router.push('/order/' + row.id)">
-        <td style="width: 100px"><div class="dot-green" :style="{ backgroundColor: row.status.color }"><p>{{ row.status.name }}</p></div></td>
-        <td>{{ row.expert.name }} {{ row.expert.surname }}</td>
+        <td style="width: 100px"><div class="dot-green" :style="{ backgroundColor: row.status.color }"><p>{{ row.status }}</p></div></td>
+        <td v-if="row.expert?.name">{{ row.expert.name }} {{ row.expert.surname }}</td>
+        <td v-else>Nav</td>
         <td>{{ row.started }}</td>
         <td>{{ row.end }}</td>
         <td>{{ row.price ? row.price + '€' : '' }}</td>
@@ -39,7 +40,6 @@
 export default {
   name: 'Profile',
   layout: 'ProfileLayout',
-  auth: true,
   data () {
     return {
       data: [],

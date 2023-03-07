@@ -5,7 +5,7 @@
       <div class="profile-user-data-field"><p>Vārds, uzvārds</p><p class="black">{{ user.name }} {{ user.surname }}</p></div>
       <div class="profile-user-data-field"><p>E-pasts</p><p class="black">{{ user.email }}</p></div>
       <div class="profile-user-sub-data">
-        <div class="profile-user-data-field"><p>Loma</p><p class="black">Lietotājs</p></div>
+        <div class="profile-user-data-field"><p>Loma</p><p class="black">{{ user.roles[0] || 'Lietotājs' }}</p></div>
         <div class="profile-user-data-field"><p>Reitings</p>
           <div class="user-rating">
             <p class="black">{{ user.rating }}</p>
