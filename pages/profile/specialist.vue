@@ -7,7 +7,6 @@
             <option :value="speciality.id" v-for="speciality in specialities" :key="speciality.id">{{ speciality.name }}</option>
           </select>
       </label>
-
       <label for="experience">Pieredzes apraksts
         <textarea id="experience" placeholder="Aprakstiet savu pieredzi" v-model="form.experience"></textarea>
       </label>
