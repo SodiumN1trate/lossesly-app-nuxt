@@ -20,7 +20,7 @@
         </label>
         <span class="filter-button" @click="onFilter()">Meklēt</span>
       </div>
-
+      <a href="/user_filtration_instruction">Instrukcija</a>
       <div class="result-container">
         <h5 v-if="specialists.length === 0">Netika atrasti speciālisti :(</h5>
         <div class="filter-specialist-card" v-for="(specialist, index) in specialists" :key="index" @click="$router.push('/user/' + specialist.id)">

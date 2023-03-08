@@ -5,7 +5,7 @@
         <div class="profile-container w-100 flex-column">
           <h2>Pamācība</h2>
           <div class="d-flex" style="gap: 50px;">
-            <div class="d-flex flex-column" style="border-right: 2px solid orange; padding-right: 20px; width: 40%;">
+            <div class="d-flex flex-column" style="border-right: 2px solid orange; padding-right: 20px; width: 60%;gap: 20px">
               <a href="#find_specialist"><h5>Speciālist atrašana</h5></a>
               <a href="#specialist_info"><h5>Speciālista informācija</h5></a>
               <a href="#book_a_specialist"><h5>Speciālista pieteikšana</h5></a>

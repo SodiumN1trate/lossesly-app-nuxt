@@ -23,6 +23,7 @@
         </div>
         <button>Ienākt</button>
         <span>Neesi reģistrējies? <a href="/register">Izveidot profilu</a></span>
+        <a href="/login_register_instruction">Instrukcija</a>
       </form>
     </div>
   </div>

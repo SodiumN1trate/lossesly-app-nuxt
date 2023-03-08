@@ -14,6 +14,7 @@
             <NuxtLink v-can-role="'Galvenais administrators'"  to="/admin/users" class="black-75">Administrācija</NuxtLink>
             <NuxtLink v-can-role="'Administrators'"  to="/admin/users" class="black-75">Administrācija</NuxtLink>
             <a @click="logout" class="black-75">Iziet</a>
+            <a href="/profile_instruction">Instrukcija</a>
           </div>
         </div>
         <div class="profile-content">

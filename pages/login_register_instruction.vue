@@ -5,7 +5,7 @@
         <div class="profile-container w-100 flex-column">
           <h2>Pamācība</h2>
           <div class="d-flex" style="gap: 50px;">
-            <div class="d-flex flex-column" style="border-right: 2px solid orange; padding-right: 20px; width: 40%;">
+            <div class="d-flex flex-column" style="border-right: 2px solid orange; padding-right: 20px; width: 40%;gap: 20px">
               <a href="#register"><h5>Reģistrācija</h5></a>
               <a href="#log-in"><h5>Ieiet</h5></a>
               <a href="#forgot_password"><h5>Paroles maiņa</h5></a>

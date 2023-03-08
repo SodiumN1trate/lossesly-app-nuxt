@@ -5,7 +5,7 @@
         <div class="profile-container w-100 flex-column">
           <h2>Pamācība</h2>
           <div class="d-flex" style="gap: 50px;">
-            <div class="d-flex flex-column" style="border-right: 2px solid orange; padding-right: 20px; width: 40%;">
+            <div class="d-flex flex-column" style="border-right: 2px solid orange; padding-right: 20px; width: 40%; gap: 20px">
               <a href="#profile"><h5>Profils</h5></a>
               <a href="#profile2"><h5>Profils</h5></a>
               <a href="#data_change"><h5>Datu labošana</h5></a>

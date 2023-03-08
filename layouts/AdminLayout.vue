@@ -11,6 +11,7 @@
             <NuxtLink to="/admin/job_cancels" class="black-75">Darbu atcelšana</NuxtLink>
 <!--            <NuxtLink to="/profile/edit" class="black-75">Atbalsts</NuxtLink>-->
             <NuxtLink to="/admin/specialities" class="black-75">Specialitātes</NuxtLink>
+            <a href="/admin_instruction">Instrukcija</a>
           </div>
         </div>
         <div class="profile-content">
